@@ -1,0 +1,16 @@
+---
+
+### `.cursorrules` Configuration
+
+Create a file named `.cursorrules` in the root folder of your project and paste this directly into it. This guarantees Cursor's agent writes the code exactly how you want it.
+
+```yaml
+cursor_rules:
+  - "Always write strictly typed TypeScript; avoid 'any' under all circumstances."
+  - "Use Next.js 14/15 Server Components by default. Use 'use client' only for components requiring interactivity, polling, or browser hooks."
+  - "For data polling (crypto prices), use @tanstack/react-query with a 60-second staleTime and 30-second refetchInterval."
+  - "Styling must strictly use Tailwind CSS and primitives from shadcn/ui."
+  - "Database operations must go through the Supabase TypeScript client using generated DB types."
+  - "Keep LLM extraction prompts deterministic: always enforce JSON schema output via tools/function-calling."
+  - "CRITICAL BUSINESS LOGIC: When scaffolding the Playwright scraper, ensure it targets the official Bursa Malaysia IPO summary URL (https://www.bursamalaysia.com/listing/listing_resources/ipo/ipo_summary) as the source of truth for closing dates."
+  - "UX DESIGN RULE: When generating UI components for the IPO scorecard, visually layer the data (P/E comparisons, risk factors) to match or exceed the analytical depth seen on the iSaham IPO Dashboard."
